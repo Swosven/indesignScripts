@@ -1,0 +1,143 @@
+g_name=Approche optique apos
+g_isValid=true
+g_appliedChStyle=approche_optiq_apos
+g_grep=.’
+
+g_name=Cesure_tiret
+g_isValid=true
+g_appliedChStyle=[Sans]
+g_grep=(?<=[\u\l])-(?<=[\u\l])
+
+g_name=Euro
+g_isValid=true
+g_appliedChStyle=euro
+g_grep=€
+
+g_name=Exposant_nbre
+g_isValid=true
+g_appliedChStyle=exposants
+g_grep=(?<=\d)er?s?|(?<=\d)ères?|(?<=\d)èmes?|(?<=\d)n?de?s?
+
+g_name=Exposant_numeraux
+g_isValid=true
+g_appliedChStyle=exposant
+g_grep=(?-i)(?<=\d)(de?s?|[eè]r?e?s?)(?=\s|[[:punct:]])
+
+g_name=Exposant_romains
+g_isValid=true
+g_appliedChStyle=exposant
+g_grep=(?-i)(?<=[XVI])([eè]r?e?s?)(?=\s|[[:punct:]])
+
+g_name=Exposants chiffres
+g_isValid=true
+g_appliedChStyle=Exposant
+g_grep=(?<=\d)(e|er|ème|re|ère)\>
+
+g_name=Exposants_chiffres
+g_isValid=true
+g_appliedChStyle=exposant
+g_grep=(?<=\d)er?s?|(?<=\d)ères?|(?<=\d)nd
+
+g_name=Exposants_no
+g_isValid=true
+g_appliedChStyle=Exposant
+g_grep=(?i)(?<=\sn)o\s(?=\d)
+
+g_name=Exposants_nos
+g_isValid=true
+g_appliedChStyle=Exposant
+g_grep=(?i)(?<=n)os?\s(?=\d)
+
+g_name=Exposants_romains
+g_isValid=true
+g_appliedChStyle=Exposant
+g_grep=(?<=I|X|V)(er|re|e)(?=( |\.|,|…|\)|\}|\]|\n|\r))
+
+g_name=Guillemets_ital
+g_isValid=true
+g_appliedChStyle=01 TEXTE italic
+g_grep=«[^»]*»|“[^”]*”
+
+g_name=Latin italique
+g_isValid=true
+g_appliedChStyle=Texte ital
+g_grep=Benedictus|Credo|Gloria|\(?Lætare\)?|Liturgia horarum|Magnificat|Kyrie|Te Deum
+
+g_name=Lectionnaire exposant
+g_isValid=true
+g_appliedChStyle=Exposant
+g_grep=(?<=Lect)(naire)
+
+g_name=Sans_cesure
+g_isValid=true
+g_appliedChStyle=sans_cesure
+g_grep=[\u\l]['’][\u\l]+
+
+g_name=Sans_cesure apostrophe
+g_isValid=true
+g_appliedChStyle=sans_cesure
+g_grep=[\u\l]['’][\u\l-]+
+
+g_name=Semaines X bold
+g_isValid=true
+g_appliedChStyle=Texte bold
+g_grep=\(semaine\s[IVX]{1,3}\)|semaine\s[IVX]{1,3}
+
+g_name=Site-emails_liens0
+g_isValid=true
+g_appliedChStyle=email_liens
+g_grep=[a-z0-9.-]+@[a-z0-9-]+\.[a-z]{2,5}
+
+g_name=Site-emails_liens1
+g_isValid=true
+g_appliedChStyle=coul vert
+g_grep=\S+@\S+\.\S{2,4}
+
+g_name=Site-emails_liens2
+g_isValid=true
+g_appliedChStyle=email_liens
+g_grep=(http|https|www|ftp|feed)\S+
+
+g_name=Site-emails_liens3
+g_isValid=true
+g_appliedChStyle=email_liens
+g_grep=(www\.|http:\/\/)?[a-z0-9.-]+\.[a-z]{2,5}
+
+g_name=Style name
+g_isValid=true
+g_appliedChStyle=gras
+g_grep=\S+@\S+\.\S{2,4}
+
+g_name=Supplement ital
+g_isValid=true
+g_appliedChStyle=Texte ital
+g_grep=([^[]Supplément*)(?=\[)
+
+g_name=Tel dans le texte
+g_isValid=true
+g_appliedChStyle=coul vert
+g_grep=\d\d\s\d\d\s\d\d\s\d\d\s\d\d
+
+g_name=Transparent_01
+g_isValid=true
+g_appliedChStyle=transparent_s-n
+g_grep=\s[—–-] \n
+
+g_name=Transparent_02
+g_isValid=true
+g_appliedChStyle=transparent_s-n
+g_grep=\s[—–-] $
+
+i_name=Un mot bold
+i_isValid=true
+i_appliedChStyle=Texte bold
+i_delimiter=1380541559
+i_inclusive=true
+i_repetition=1
+
+l_name=1 ligne rouge
+l_isValid=true
+l_appliedChStyle=Normal rouge
+l_nbLines=1
+l_repetition=-1
+
