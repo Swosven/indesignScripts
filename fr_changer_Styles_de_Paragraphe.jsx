@@ -209,10 +209,8 @@ function affichage() {
 			var okCancelGroup = add("group");
 			with (okCancelGroup) {
 				orientation = "row";
-				var aideBtn = add("button", undefined, "Aide", {name:"Help"});
-					aideBtn.preferredSize = [50, 25];
 				var okBtn = add("button", undefined, "Valider", {name:"ok"});
-					okBtn.preferredSize = [140, 25];
+				var cancelBtn = add("button", undefined, "Annuler", {name:"cancel"});
 			}
 
 
