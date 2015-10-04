@@ -3,7 +3,7 @@
 // Script for InDesign CS4-+.
 // septembre 2015
 // sw
-// based on
+// basé sur
 //    Script by Thomas Silkjær
 //	http://indesigning.net/
 //
