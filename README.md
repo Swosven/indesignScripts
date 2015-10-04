@@ -1,6 +1,7 @@
 # indesignScripts
 
 - addConditions_numbers_to_characters.jsx
+
   Search for numbers and :
   - add condition "numbers" (conditionnal text)
   - add text (as _numbers2text_, this will be replace by value of number to text function) with condition "characters"
@@ -9,6 +10,7 @@
   Use last GREP expression used or search for any number (need a $1 result)
 
 - en_Apply_Object_Styles_Text.jsx
+
   Apply paragraph styles (and next) from object's style to frames (and linked/threaded frames).
 
   USE OPTIONS : 
@@ -47,6 +49,7 @@
 
 
 - fr_Appliquer_Styles_Objet_Texte.jsx
+
   Applique les styles de paragraphes et suivants
 
   UTILISE LES OPTIONS :
@@ -66,6 +69,7 @@
   - PLUSIEURS PARAGRAPHES : Applique les styles suivants du style de paragraphe de tête (cf. TEXTE).
 
 - fr_changer_Styles_de_Paragraphe.jsx
+
   Permet de changer les styles de paragraphes consécutifs
   avec l'option de chercher dans le contenu du 1er style (recherche GREP ou texte)
   et l'option de supprimer les styles de caractères ou styles (gras, italic...) ne correspondant pas au style de paragraphe.
@@ -73,6 +77,7 @@
   Ou seulement dans la sélection (choisir manuellement les styles (1) et (2))
 
 - fr_copier_Styles_Grep-Imbr-Lignes.jsx
+
   Permet de sélectionner et récupérer/enregistrer les styles GREP, imbriqués, de ligne dans un fichier texte
   Permet de coller les styles enregistrés dans les styles de paragraphes choisis du document ouvert.
   Permet de supprimer des styles de la liste pré-enregistrée
@@ -81,10 +86,12 @@
   Utilise le fichier texte (dans le même dossier) : fr_copier_listeStyles.txt
   
 - fr_copier_listeStyles.txt
+
     Utilisé par fr_copier_Styles_Grep-Imbr-Lignes.jsx
     
   
 - addConditions_numbers_to_characters.jsx
+
   Utilise la dernière recherche GREP pour appliquer une condition (texte conditionnel) "numbers"
 
   Recherhce des chiffres et :
