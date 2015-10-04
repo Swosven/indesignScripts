@@ -1,7 +1,7 @@
 # indesignScripts
 
 - addConditions_numbers_to_characters.jsx
-
+==
   Search for numbers and :
   - add condition "numbers" (conditionnal text)
   - add text (as _numbers2text_, this will be replace by value of number to text function) with condition "characters"
