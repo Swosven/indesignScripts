@@ -3,7 +3,7 @@
 // Script for InDesign CS4-+.
 // septembre 2015
 // sw
-// basé sur
+// based on
 //    Script by Thomas Silkjær
 //	http://indesigning.net/
 //
@@ -15,7 +15,7 @@
 
 // Globals
 const wScriptName = "Remplacer les styles de paragraphe";
-const wScriptVersion = "0.1";
+const wScriptVersion = "1.0";
 var myInDesignVersion = Number(String(app.version).split(".")[0]);
 
 var defaultStyle = "Sans";
@@ -51,7 +51,7 @@ if(app.documents.length != 0){
 	}
 
 	var ln = app.selection.length ;
-	if (ln == 0) { // fonctionne avec CS4, voir si CC lance l'alerte au début
+	if (ln == 0) { // CS4-CC
 					var infos = "Simples remplacements :\n===============\n Utiliser uniquement les choix de style pour remplacer les styles (1) ou (2) par les styles (3) et (4).\n";
 					infos += "Ne pas oublier de remplir les styles (3) et (4), même par des styles identiques si l'on ne veut pas en changer un.\n";
 					infos += "\nRecherches :\n============\n Permet de cherche du texte ou des GREP contenu dans le style (1) uniquement.\n";
@@ -65,13 +65,15 @@ if(app.documents.length != 0){
 				case "Line": // Story
 				case "Paragraph": // Story
 				case "InsertionPoint": // Story
-				affichage() ;
+				affichage(true) ;
 			break;
 				case "Text": // Story
 				case "TextColumn":
-				case "TextStyleRange": // Story
 				case "Story": 
 				case "TextFrame": // Spread
+				affichage(false) ;
+			break;
+				case "TextStyleRange": // Story
 				case "Rectangle":
 				// alert(app.selection[0].constructor.name + "\nparent : " + app.selection[0].parent.constructor.name) ;
 				alert("Mauvaise sélection !");
@@ -81,22 +83,20 @@ if(app.documents.length != 0){
 }
 
 
-function affichage() {
-	//alert("texte : " + app.selection[0].constructor.name + "\nstyle : " + app.selection[0].paragraphs[0].appliedParagraphStyle.id) ;
+function affichage(story) {
 	
-
-	var placedstory = app.selection[0].parentTextFrames[0].parentStory;
-	var pLn = placedstory.paragraphs.length;
-	var nextPara = -1;
-	for (var i = 0; i < pLn && nextPara == -1; i++) {
-		if (app.selection[0].paragraphs[0].contents == placedstory.paragraphs[i].contents)
-		nextPara = i+1;
-	}
-	//if (nextPara !== -1 && nextPara != pLn) alert("on en a un : " + nextPara);
-	if (nextPara == -1 || nextPara == pLn)  {
-		// if (nextPara == pLn) 
-		alert("Aucun paragraphe suivant !");
-		exit();
+	if (story) {
+		var placedstory = app.selection[0].parentTextFrames[0].parentStory;
+		var pLn = placedstory.paragraphs.length;
+		var nextPara = -1;
+		for (var i = 0; i < pLn && nextPara == -1; i++) {
+			if (app.selection[0].paragraphs[0].contents == placedstory.paragraphs[i].contents)
+			nextPara = i+1;
+		}
+		if (nextPara == -1 || nextPara == pLn)  {
+			alert("Aucun paragraphe suivant !");
+			exit();
+		}
 	}
 	
 
@@ -177,14 +177,16 @@ function affichage() {
 				var para1_txt = add('statictext', undefined, 'Si (1) :');
 				var find_first_paragraph = add('dropdownlist',undefined,undefined,{items:mystring});
 					find_first_paragraph.helpTip = "Liste des styles de paragraphe disponibles\r";
-					find_first_paragraph.selection = findid(app.selection[0].paragraphs[0].appliedParagraphStyle.id);
+					if (story) find_first_paragraph.selection = findid(app.selection[0].paragraphs[0].appliedParagraphStyle.id);
+					else find_first_paragraph.selection = 0;
 			}
 			var groupePara2 = add("group");
 			with(groupePara2) {
 				var para2_txt = add('statictext', undefined, 'est suivi de (2) :');
 				var find_second_paragraph = add('dropdownlist',undefined,undefined,{items:mystring});
 					find_second_paragraph.helpTip = "Liste des styles de paragraphe disponibles\r";
-					find_second_paragraph.selection = findid(placedstory.paragraphs[nextPara].appliedParagraphStyle.id);
+					if (story) find_second_paragraph.selection = findid(placedstory.paragraphs[nextPara].appliedParagraphStyle.id);
+					else find_second_paragraph.selection = 0 ;
 			}
 			var groupePara3 = add("group");
 			with(groupePara3) {
@@ -258,7 +260,8 @@ function affichage() {
 		}
 
 		//Search the current story
-		var the_story = app.selection[0].parentStory;
+		if (story) var the_story = app.selection[0].parentStory;
+		else var the_story = app.selection[0];
 		if (textCheckbox.value) var found_paragraphs = the_story.findText();
 		if (GREPCheckbox.value || (!textCheckbox.value && !GREPCheckbox.value)) var found_paragraphs = the_story.findGrep();
 
@@ -328,5 +331,3 @@ function findid(lid) {
 	}
 	return -1;
 }
-
-
