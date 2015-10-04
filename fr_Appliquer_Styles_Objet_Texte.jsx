@@ -11,33 +11,33 @@ paragraphe : 4 clics
 ligne : 3 clics
 mot : 2 clics
 
+ Applique les styles de paragraphes et suivants
 
+UTILISE LES OPTIONS :
+=====================
+• Style suivant du style de paragraphe
+• Appliquer style de paragraphe du style d'objet
+  -> Appliquer les styles de paragraphe suivants du style d'objet
+Suite de styles = le style de paragraphe (et suivants si cochés)
+        du style d'objet, si les options sont COCHÉES.
 
-Types de sélection :
-====================
-	• Multiblocs :
-	--------------
-	applique à chaque bloc sa suite de styles
-	
-	• Blocs liés :
-	--------------
-		o Un bloc lié : 
-		  à ce bloc sa suite de styles
-		  
-		o insertionPoint (curseur ds le texte) : 
-		  à chaque bloc lié, sa suite de styles
-		  
-		o texte (plusieurs mots, lignes, paras, tout le texte) : 
-		  style du para 1, et styles suivants de ce para
-		  
-		o ligne (3 clics) : 
-		  suite du bloc en cours à la story
-		  
-		o mot (2 clics) : 
-		  suite du bloc de départ à la story
-
-
-
+7 USAGES SELON LA SÉLECTION :
+=============================
+• MULTI-BLOCS :
+   Applique à chaque bloc sa propre suite de styles.
+• BLOC SOLO :
+   Lui applique sa suite de styles.
+• CURSEUR : 
+   À chaque bloc (si plusieurs liés) sa suite de styles.
+• TEXTE (mots, paras, tout le texte, etc.) :
+   Style du 1er paragraphe au 1er paragraphe, et les styles suivants (du style de paragraphe)
+   aux autres paragraohes de la sélection.
+• 1 LIGNE : 
+   La suite de styles du bloc de cette ligne à l'article complet.
+• 1 MOT : 
+   La suite de styles du bloc de départ à l'article complet.
+• PLUSIEURS PARAGRAPHES :
+   Applique les styles suivants du style de paragraphe de tête (cf. TEXTE).
 
 */
 
