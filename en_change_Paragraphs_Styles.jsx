@@ -65,13 +65,15 @@ if(app.documents.length != 0){
 				case "Line": // Story
 				case "Paragraph": // Story
 				case "InsertionPoint": // Story
-				affichage() ;
+				affichage(true) ;
 			break;
 				case "Text": // Story
 				case "TextColumn":
-				case "TextStyleRange": // Story
 				case "Story": 
 				case "TextFrame": // Spread
+				affichage(false) ;
+			break;
+				case "TextStyleRange": // Story
 				case "Rectangle":
 				alert("Bad selection!");
 			break;
@@ -80,19 +82,21 @@ if(app.documents.length != 0){
 }
 
 
-function affichage() {
+function affichage(story) {
 	
 
-	var placedstory = app.selection[0].parentTextFrames[0].parentStory;
-	var pLn = placedstory.paragraphs.length;
-	var nextPara = -1;
-	for (var i = 0; i < pLn && nextPara == -1; i++) {
-		if (app.selection[0].paragraphs[0].contents == placedstory.paragraphs[i].contents)
-		nextPara = i+1;
-	}
-	if (nextPara == -1 || nextPara == pLn)  {
-		alert("No next paragraph!");
-		exit();
+	if (story) {
+		var placedstory = app.selection[0].parentTextFrames[0].parentStory;
+		var pLn = placedstory.paragraphs.length;
+		var nextPara = -1;
+		for (var i = 0; i < pLn && nextPara == -1; i++) {
+			if (app.selection[0].paragraphs[0].contents == placedstory.paragraphs[i].contents)
+			nextPara = i+1;
+		}
+		if (nextPara == -1 || nextPara == pLn)  {
+			alert("No next paragraph!");
+			exit();
+		}
 	}
 	
 
@@ -173,14 +177,16 @@ function affichage() {
 				var para1_txt = add('statictext', undefined, 'If (1) :');
 				var find_first_paragraph = add('dropdownlist',undefined,undefined,{items:mystring});
 					find_first_paragraph.helpTip = "List of paragraph styles\r";
-					find_first_paragraph.selection = findid(app.selection[0].paragraphs[0].appliedParagraphStyle.id);
+					if (story) find_first_paragraph.selection = findid(app.selection[0].paragraphs[0].appliedParagraphStyle.id);
+					else find_first_paragraph.selection = 0;
 			}
 			var groupePara2 = add("group");
 			with(groupePara2) {
 				var para2_txt = add('statictext', undefined, 'is followed by (2) :');
 				var find_second_paragraph = add('dropdownlist',undefined,undefined,{items:mystring});
 					find_second_paragraph.helpTip = "List of paragraph styles\r";
-					find_second_paragraph.selection = findid(placedstory.paragraphs[nextPara].appliedParagraphStyle.id);
+					if (story) find_second_paragraph.selection = findid(placedstory.paragraphs[nextPara].appliedParagraphStyle.id);
+					else find_second_paragraph.selection = 0 ;
 			}
 			var groupePara3 = add("group");
 			with(groupePara3) {
@@ -254,7 +260,8 @@ function affichage() {
 		}
 
 		//Search the current story
-		var the_story = app.selection[0].parentStory;
+		if (story) var the_story = app.selection[0].parentStory;
+		else var the_story = app.selection[0];
 		if (textCheckbox.value) var found_paragraphs = the_story.findText();
 		if (GREPCheckbox.value || (!textCheckbox.value && !GREPCheckbox.value)) var found_paragraphs = the_story.findGrep();
 
@@ -323,3 +330,5 @@ function findid(lid) {
 	}
 	return -1;
 }
+
+
