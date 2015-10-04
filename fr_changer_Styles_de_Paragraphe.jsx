@@ -12,11 +12,7 @@
 // et l'option de supprimer les styles de caractères ou styles (gras, italic...) ne correspondant pas au style de paragraphe.
 //------------------------------*//
 
-/*
-sélectionner la textFrame parente, boucler dans les para jusqu'à avoir la même id que le para en cours,
-sélectionner le para suivant
 
-*/
 // Globals
 const wScriptName = "Remplacer les styles de paragraphe";
 const wScriptVersion = "0.1";
