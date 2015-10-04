@@ -1,6 +1,6 @@
 # indesignScripts
 
-###### - addConditions_numbers_to_characters.jsx*
+- ##### addConditions_numbers_to_characters.jsx*
 
   Search for numbers and :
   - add condition "numbers" (conditionnal text)
