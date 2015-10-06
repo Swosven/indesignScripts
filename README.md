@@ -59,6 +59,17 @@
 
   Use by en_copy_Styles_GREP-Nested-Lines.jsx
 
+
+- #### en_layers_show-hide_in_all_Docs.jsx
+
+  Modify same layer (same name) visibility
+  in all open documents
+  
+  - Select layer name
+  - Option Show/Hide
+  
+  Usefull with inDesign books files
+
 ===========================================================
 
 
@@ -137,6 +148,18 @@
   - texte conditionnel "characters" qui contient l'équivalent des chiffres en texte
 
   Selon le texte conditionnel sélectionné, les titre de chapitre seront affichés en chiffres ou en lettres
+
+
+
+- #### fr_calques_afficher-masquer_ds_ts_lesDocs.jsx
+
+  Changer la visibilité d'un même calque (même nom) dans tous les documents ouverts s'il y existe
+  
+  - Choix du calque dans un menu déroulant
+  - Choix Afficher/Masquer
+  
+  Peut être utilisé sur les fichiers d'un livre inDesign
+
 
 
   
