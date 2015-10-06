@@ -18,7 +18,7 @@
   USE OPTIONS : 
   - Next style from paragraph style  
   - Apply paragraph style from object style 
-  - 
+
     -> Apply next paragraph styles from object style   
 
   Styles suite = paragraph style (and next if checked) from object style, if options are CHECKED.  
