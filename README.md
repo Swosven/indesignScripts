@@ -164,9 +164,9 @@
 
 - #### fr_correctionsTypo.jsx
 
-Applique quelques corrections typos fréquentes.
+  Applique quelques corrections typos fréquentes.
 
-Des options supplémentaires mémorisables apparaissent lorsqu'aucun texte n'est sélectionné.
+  Des options supplémentaires mémorisables apparaissent lorsqu'aucun texte n'est sélectionné.
 
 
 
