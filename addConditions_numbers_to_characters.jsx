@@ -1,5 +1,5 @@
+//DESCRIPTION: Convert numbers to text from GREP expression
 /*
-DESCRIPTION: Convert numbers to text from GREP expression
 // need $1
 Wosven
 May 2015
@@ -8,10 +8,10 @@ May 2015
 
 1. Use the current find GREP expression and add a condition "numbers".
 	  	   ----------------------------
-	If there's no GREP expression, use by default : 
-	(?<=[^\\d])(\\d+)(?=[^\\d])	
+	If there's no GREP expression, use by default :
+	(?<=[^\\d])(\\d+)(?=[^\\d])
 
-		It means : 
+		It means :
 		(\\d+) = find any number(s) (= result expression $1)
 		(?<=[^\\d]) = preceded by "not a number"
 		(?=[^\\d]) = followed by "not a number"
@@ -26,14 +26,14 @@ If the 2 character styles exist ("numbers" AND "characters"), the script apply t
 
 IMPORTANT :
 	If there's no expression, the script use this one :
-		(?<=[^\\d])(\\d+)(?=[^\\d])	
+		(?<=[^\\d])(\\d+)(?=[^\\d])
 	it will process any number in the document.
 
 
 TIP:
-	Use GREP panel to test expressions, with styles and options, etc. 
+	Use GREP panel to test expressions, with styles and options, etc.
 	Make sure there's a $1 result
-	
+
 EXAMPLE:
 	(?<=Chapter )(\d+)(?=[^\d])
 	will search any number preceded by "Chapter "
@@ -59,8 +59,8 @@ function main(){
 		}
 		// if you don't want the characters style applied, uncomment this line :
 		// applyStyles = false;
-		
-		
+
+
 		// search conditions "characters" and "numbers" (or create them)
 		try {
 			if (app.activeDocument.conditions.itemByName("characters").isValid == false)
@@ -75,16 +75,16 @@ function main(){
 		catch(e) {
 			alert(e);
 		}
-		
+
 		app.findTextPreferences = app.changeTextPreferences = null;
 		app.findTextPreferences.findWhat = "_numbers2text_";
-		
-		
+
+
 		if (app.findGrepPreferences.findWhat == "") {
 			app.findGrepPreferences.findWhat = "(?<=[^\\d])(\\d+)(?=[^\\d])";
 		}
 		app.changeGrepPreferences.changeTo = "$1_numbers2text_";
-	
+
 		var GREPresultats = myObject.findGrep();
 		var remplacements = [];
 		if (GREPresultats.length > 0) {
@@ -95,7 +95,7 @@ function main(){
 				remplacements[r] = numberToText (GREPresultats[r].contents);
 			}
 			myObject.changeGrep();
-				
+
 			// part 2 : add characters
 			var TXTresultats = myObject.findText();
 			if (TXTresultats.length == remplacements.length) {
@@ -116,52 +116,52 @@ function main(){
 		alert("Please open a document.");
 	}
 }
-	
-// function from 
+
+// function from
 //Convert Page Number Placeholder '#' into Text
-// A Jongware Script 11-Dec-2011  
-function numberToText (number)  
-{  
-          var ones = [ "zero", "one", "two", "three", "four", "five",  
-                    "six", "seven", "eight", "nine", "ten",  
-                    "eleven", "twelve", "thirteen", "fourteen", "fifteen",  
-                    "sixteen", "seventeen", "eighteen", "nineteen" ];  
-          var tens = [ "zero", "ten", "twenty", "thirty", "fourty", "fifty",  
-                    "sixty", "seventy", "eighty", "ninety" ];  
-          var result = '';  
-  
-  
-          if (number < 0)  
-                    return "ha ha";  
-          if (number == 0)  
-                    return ones[0];  
-  
-  
-          if (number >= 1000)  
-          {  
-                    thousand = Math.floor(number/1000);  
-                    result = numberToText (thousand) + " thousand";  
-                    number = number - 1000*thousand;  
-                    if (number > 0)  
-                              result = result + " ";  
-          }  
-          if (number >= 100)  
-          {  
-                    hundred = Math.floor(number/100);  
-                    result = result + ones[hundred]+" hundred";  
-                    number = number - 100*hundred;  
-                    if (number != 0)  
-                              result = result + " and ";  
-          }  
-          if (number >= 20)  
-          {  
-                    ten = Math.floor(number/10);  
-                    result = result + tens[ten];  
-                    number = number - 10*ten;  
-                    if (number != 0)  
-                              result = result + "-";  
-          }  
-          if (number != 0)  
-                    result = result + ones[number];  
-          return result;  
-}  
+// A Jongware Script 11-Dec-2011
+function numberToText (number)
+{
+          var ones = [ "zero", "one", "two", "three", "four", "five",
+                    "six", "seven", "eight", "nine", "ten",
+                    "eleven", "twelve", "thirteen", "fourteen", "fifteen",
+                    "sixteen", "seventeen", "eighteen", "nineteen" ];
+          var tens = [ "zero", "ten", "twenty", "thirty", "fourty", "fifty",
+                    "sixty", "seventy", "eighty", "ninety" ];
+          var result = '';
+
+
+          if (number < 0)
+                    return "ha ha";
+          if (number == 0)
+                    return ones[0];
+
+
+          if (number >= 1000)
+          {
+                    thousand = Math.floor(number/1000);
+                    result = numberToText (thousand) + " thousand";
+                    number = number - 1000*thousand;
+                    if (number > 0)
+                              result = result + " ";
+          }
+          if (number >= 100)
+          {
+                    hundred = Math.floor(number/100);
+                    result = result + ones[hundred]+" hundred";
+                    number = number - 100*hundred;
+                    if (number != 0)
+                              result = result + " and ";
+          }
+          if (number >= 20)
+          {
+                    ten = Math.floor(number/10);
+                    result = result + tens[ten];
+                    number = number - 10*ten;
+                    if (number != 0)
+                              result = result + "-";
+          }
+          if (number != 0)
+                    result = result + ones[number];
+          return result;
+}
