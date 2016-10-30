@@ -1,4 +1,4 @@
-//DESCRIPTION: Convert numbers to text from GREP expression
+//DESCRIPTION: Convert numbers to text from GREP expression.
 /*
 // need $1
 Wosven
