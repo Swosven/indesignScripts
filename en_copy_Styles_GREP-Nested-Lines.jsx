@@ -1157,6 +1157,7 @@ function I_ListeStyles() {
 		else return false;
 	}
 }
+
 function L_ListeStyles() {
 	this.l = [];
 	this.noms= [];
@@ -1389,3 +1390,4 @@ if (saveStyles == 1 && ecriture !== "") writeToFile(txtListe, ecriture, true); /
 
 
 alert( ((saveStyles == 1) ? infos.last1 : "") + ((sel.length != undefined) ? sel.length + infos.last2 : infos.last3));
+

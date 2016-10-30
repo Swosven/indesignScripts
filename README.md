@@ -18,7 +18,11 @@
   USE OPTIONS : 
   - Next style from paragraph style  
   - Apply paragraph style from object style 
+<<<<<<< HEAD
   - 
+=======
+
+>>>>>>> origin/master
     -> Apply next paragraph styles from object style   
 
   Styles suite = paragraph style (and next if checked) from object style, if options are CHECKED.  
@@ -59,6 +63,20 @@
 
   Use by en_copy_Styles_GREP-Nested-Lines.jsx
 
+<<<<<<< HEAD
+=======
+
+- #### en_layers_show-hide_in_all_Docs.jsx
+
+  Modify same layer (same name) visibility
+  in all open documents
+  
+  - Select layer name
+  - Option Show/Hide
+  
+  Usefull with inDesign books files
+
+>>>>>>> origin/master
 ===========================================================
 
 
@@ -139,4 +157,29 @@
   Selon le texte conditionnel sélectionné, les titre de chapitre seront affichés en chiffres ou en lettres
 
 
+<<<<<<< HEAD
+=======
+
+- #### fr_calques_afficher-masquer_ds_ts_lesDocs.jsx
+
+  Changer la visibilité d'un même calque (même nom) dans tous les documents ouverts s'il y existe
+  
+  - Choix du calque dans un menu déroulant
+  - Choix Afficher/Masquer
+  
+  Peut être utilisé sur les fichiers d'un livre inDesign
+
+
+
+- #### fr_correctionsTypo.jsx
+
+  Applique quelques corrections typos fréquentes.
+
+  Des options supplémentaires mémorisables apparaissent lorsqu'aucun texte n'est sélectionné.
+
+
+
+
+
+>>>>>>> origin/master
   

@@ -1,7 +1,7 @@
 //DESCRIPTION:Applique styles de texte selon sélection
 /*
 sw
-May 2015
+May 2016
 
 Applique les styles de para (et suivants) du style d'objet aux blocs (même liés).
 
