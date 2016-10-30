@@ -1,5 +1,5 @@
 //DESCRIPTION:Apply selected colors
-//DESCRIPTION:Applique la couleur choisie
+//DESCRIPTION:Applique la couleur choisie 
 /*
 If no text selected: choose 2 colors (1 & 2)
 With text selection: 
