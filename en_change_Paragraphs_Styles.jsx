@@ -5,7 +5,7 @@
 // septembre 2015
 // sw
 // based on
-//    Script by Thomas SilkjÃ¦r
+//    Script by Thomas Silkjær
 //	http://indesigning.net/
 //
 // Replace 2 consecutive paragraph styles with 2 other styles
