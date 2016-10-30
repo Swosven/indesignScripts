@@ -1,4 +1,4 @@
-//DESCRIPTION:Apply paragraph styles (and next) from object's style to frames (and linked/threaded frames).
+//DESCRIPTION:Apply paragraph styles (and next) from object's style to frames (and linked/threaded frames). 
 /*
 sw
 May 2015
