@@ -6,7 +6,7 @@ May 2016
 
 
 
-1. Use the current find GREP expression and add a condition "numbers".
+1. Use the current find GREP expression and add a condition "numbers". 
 	  	   ----------------------------
 	If there's no GREP expression, use by default :
 	(?<=[^\\d])(\\d+)(?=[^\\d])

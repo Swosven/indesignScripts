@@ -2,7 +2,7 @@
 
 //*------------------------------
 //
-// Script for InDesign CS4-CC2015.
+// Script for InDesign CS4-CC 2015.
 // 2014-2016
 // sw
 //

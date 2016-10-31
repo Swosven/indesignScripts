@@ -1,7 +1,7 @@
 //DESCRIPTION:Show/hide layer "x" in all open documents
 /*==================================
 
-6 octobre 2015
+2015
 sw 
 
 Modify same layer (same name) visibility

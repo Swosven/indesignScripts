@@ -1,5 +1,5 @@
 //DESCRIPTION:Affiche/masque le calque "x" dans tous les documents ouverts
-/*==================================
+/*=================================== 
 
 6 octobre 2015
 sw 

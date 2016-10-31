@@ -3,7 +3,7 @@
 sw
 May 2016
 
-Applique les styles de para (et suivants) du style d'objet aux blocs (même liés).
+Applique les styles de para (et suivants) du style d'objet aux blocs (même liés). 
 
 Suite de style = style de para défini dans le style d'objet, et styles suivants si cochés
 Story : équivalent d'article, tout le texte des blocs liés

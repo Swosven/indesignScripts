@@ -1,5 +1,5 @@
 //DESCRIPTION:Quelques corrections typos de base
-//----------------------------------------------------
+//---------------------------------------------------
 // Script for InDesign CS3-5.
 // sw
 // septembre 2014 / octobre 2015
@@ -13,7 +13,7 @@ v1.0 passage des expresions régulières javascript aux GREP inDesign
 v1.1 ajout d'options et de l'affichage des options lorsqu'il n'y a pas de sélection de texte
 
 
-//----------------------------------------------------
+//---------------------------------------------------
 */
 // Globals
 const wScriptName = "Corrections typographiques";

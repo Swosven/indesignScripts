@@ -1,5 +1,5 @@
 //DESCRIPTION:Copy/save (GREP/nested styles/lignes styles) from paragraphs to paragraphs
-//==============================================================
+//=============================================================
 //
 // Script for InDesign CS4-CC2015.
 // 2014-2016
